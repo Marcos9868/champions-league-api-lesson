@@ -1,11 +1,5 @@
-import express, { Request, Response } from 'express';
-import dotenv from 'dotenv';
+import { createApp } from "./app";
 
-const server = express();
-dotenv.config();
+const app = createApp();
 
-server.use(express.json());
-server.get("/", (req: Request, res: Response) => {
-  res.send("Hello world")
-});
-server.listen(process.env.PORT, () => console.log("Server running"));
+app.listen(process.env.PORT, () => console.log("Server running"))
