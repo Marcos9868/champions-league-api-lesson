@@ -1,16 +1,13 @@
-interface IHttpResponse {
-  statusCode: number;
-  body: any;
-};
+import { HttpResponse } from "../models/HttpResponse";
 
-export const ok = async (data: any): Promise<IHttpResponse> => {
+export const ok = async (data: any): Promise<HttpResponse> => {
   return {
     statusCode: 200,
     body: data
   };
 };
 
-export const noContent = async (): Promise<IHttpResponse> => {
+export const noContent = async (): Promise<HttpResponse> => {
   return {
     statusCode: 204,
     body: null
