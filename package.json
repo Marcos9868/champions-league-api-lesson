@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dist": "tsup src",
-    "start:dev": "tsx src/index.ts",
-    "start:watch": "tsx watch src/index.ts",
+    "start:dev": "tsx --env-file=.env src/index.ts",
+    "start:watch": "tsx watch --env-file=.env src/index.ts",
     "start:dist": "npm run dist && node dist/src/index.js"
   },
   "devDependencies": {
