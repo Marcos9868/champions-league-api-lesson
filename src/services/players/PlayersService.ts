@@ -18,7 +18,8 @@ export const getPlayerById = async (id: number) => {
   let response = null;
   if (player == null) {
     return response = await noContent();
+  } else {
+    response = await ok(player);
   }
-  response = await ok(player);
   return response
 }
