@@ -59,4 +59,20 @@ export const getPlayersData = async (): Promise<Player[]> => {
 export const getPlayer = async (id: number): Promise<Player | undefined> => {
   const player = data.find(p => p.id === id);
   return player;
+};
+
+export const registerPlayer = async (player: Player): Promise<Player> => {
+  const newPlayer = await data.push(player);
+  return player;
+}
+
+export const modifyPlayer = async (id: number): Promise<void> => {
+  const index = data.findIndex((p) => p.id == id);
+};
+
+export const deletePlayer = async (id: number): Promise<void> => {
+  const index = data.findIndex((p) => p.id == id);
+  if (index != 1) {
+    data.splice(index, 1);
+  }
 }
